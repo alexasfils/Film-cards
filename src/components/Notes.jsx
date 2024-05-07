@@ -1,6 +1,9 @@
 import { useState } from "react";
 import NoteItem from "./NoteItem";
 import Form from "./Form";
+import Navbar from "../components/Navbar";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function Notes() {
   const [newNote, setNewNote] = useState([]);
@@ -19,7 +22,10 @@ function Notes() {
 
   return (
     <>
+      <Header></Header>
+      <Navbar></Navbar>
       <Form onAdd={addNote} />
+      <Footer></Footer>
       <div className="notes-div">
         {newNote.map(function (item, index) {
           return (
